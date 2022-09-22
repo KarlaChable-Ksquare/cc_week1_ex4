@@ -28,13 +28,13 @@ const pairTheSum = (numbers, target) => {
       for (let j = 1; j < numbers.length; j++) {
         //iteration 2 from j=1 (or i+1).
         if (typeof numbers[i] !== "number" || typeof numbers[j] !== "number") {
-          //validation for elements from array to need be numbers.
+          //validation for elements from array (i, j) to need be numbers.
           return "Please only number values in array";
         } else if (typeof target !== "number") {
-          //only number for "target" value.
+          //only number for "target" value or we send a message.
           return "Please input target value";
         } else {
-          //now we add value per index ("add" variable) and comparate it with target value if that is True, return it.
+          //Now we add value per index ("add" variable) and comparate it (strict equality) with target value, if that is True, return it as "True", that means we found a match "add" and "target".
           let add = numbers[i] + numbers[j];
           if (add === target) {
             return (res = true);
@@ -43,7 +43,7 @@ const pairTheSum = (numbers, target) => {
       }
     }
   }
-  //If we close cicle without a true answer return "res" value (default, False)
+  //If we close cycle without a true answer return "res" default value.
   /* Only make changes below this comment */
   return res;
 };
